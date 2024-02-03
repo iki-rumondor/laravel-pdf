@@ -12,6 +12,11 @@
             border: 1px solid black;
         }
 
+        #table-data tr, #table-data th, #table-data td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
     </style>
 </head>
 
@@ -33,20 +38,30 @@
         </table>
     </div>
 
-    <h2 class="mt-4 mb-3">{{ $title }}</h2>
-    <table class="table border">
-        <tr class="border p-2">
-            @foreach ($header as $item)
-                <th class="border p-2">{{ $item }}</th>
-            @endforeach
-        </tr>
+    <h2 class="mt-4">Daftar Absensi</h2>
+    <div class="my-3">
+        <p>Hari : {{ $data["tanggal"] }}</p>
+        <p>Waktu : {{ $data["waktu"] }}</p>
+        <p>Kelas : {{ $data["kelas"] }}</p>
+        <p>Mata Pelajaran : {{ $data["mapel"] }}</p>
+        {{-- <p>Guru : {{ $data["nama"] }}</p> --}}
+        <p>Tahun Ajaran : {{ $data["tahun_ajaran"] }}</p>
+    </div>
 
-        @foreach ($values as $item)
-            <tr class="border p-3">
-                @foreach ($item as $i)
-                    <td class="border p-2">{{ $i }}</td>
-                @endforeach
-            </tr>
+    <table id="table-data" class="table border">
+        <tr>
+            <th>No</th>
+            <th>NIS</th>
+            <th>Nama</th>
+            <th>Keterangan</th>
+        </tr>
+        @foreach($data["siswa"] as $item)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $item["nis"] }}</td>
+            <td>{{ $item["nama"] }}</td>
+            <td>{{ $item["keterangan"] }}</td>
+        </tr>
         @endforeach
     </table>
 </body>

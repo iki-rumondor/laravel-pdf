@@ -13,12 +13,34 @@ class PdfController extends Controller
         $requestData = $request->json()->all();
         $arrayTitle = explode("_", $title);
         $data = [
-            "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-bonbol.jpg'))),
+            "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
             "title" => implode(" ", $arrayTitle),
             "header" => array_keys($requestData[0]),
             "values" => $requestData,
         ];
         $pdf = PDF::loadView('pdf.index', $data)->setPaper('a4', 'landscape');
+        return $pdf->stream('output.pdf');
+    }
+
+    public function schoolFee(Request $request)
+    {
+        $requestData = $request->json()->all();
+        $data = [
+            "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
+            "data" => $requestData,
+        ];
+        $pdf = PDF::loadView('pdf.school_fee', $data)->setPaper('a4', 'landscape');
+        return $pdf->stream('output.pdf');
+    }
+
+    public function absence(Request $request)
+    {
+        $requestData = $request->json()->all();
+        $data = [
+            "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
+            "data" => $requestData,
+        ];
+        $pdf = PDF::loadView('pdf.absence', $data)->setPaper('a4', 'landscape');
         return $pdf->stream('output.pdf');
     }
 }

@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/generate-pdf/{title}', [PdfController::class, 'generatePdf']);
+Route::post('/school-fee-pdf', [PdfController::class, 'schoolFee']);
+Route::post('/absence-pdf', [PdfController::class, 'absence']);

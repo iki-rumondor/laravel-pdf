@@ -12,6 +12,11 @@
             border: 1px solid black;
         }
 
+        #table-data tr, #table-data th, #table-data td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
     </style>
 </head>
 
@@ -33,20 +38,23 @@
         </table>
     </div>
 
-    <h2 class="mt-4 mb-3">{{ $title }}</h2>
-    <table class="table border">
-        <tr class="border p-2">
-            @foreach ($header as $item)
-                <th class="border p-2">{{ $item }}</th>
-            @endforeach
+    <h2 class="mt-4 mb-3">Daftar Pembayaran SPP</h2>
+    <p>Nama : {{ $data["nama"] }}</p>
+    <p>Kelas : {{ $data["kelas"] }}</p>
+    <table id="table-data" class="table border">
+        <tr>
+            <th>No</th>
+            <th>Tanggal</th>
+            <th>Bulan</th>
+            <th>Nominal</th>
         </tr>
-
-        @foreach ($values as $item)
-            <tr class="border p-3">
-                @foreach ($item as $i)
-                    <td class="border p-2">{{ $i }}</td>
-                @endforeach
-            </tr>
+        @foreach($data["spp"] as $item)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $item["tanggal"] }}</td>
+            <td>{{ $item["bulan"] }}</td>
+            <td>{{ $item["nominal"] }}</td>
+        </tr>
         @endforeach
     </table>
 </body>
