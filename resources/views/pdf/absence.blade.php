@@ -38,9 +38,9 @@
         </table>
     </div>
 
-    <h2 class="mt-4">Daftar Absensi</h2>
+    <h2 class="my-4 text-center">Daftar Absensi</h2>
     <div class="my-3">
-        <p>Hari : {{ $data["tanggal"] }}</p>
+        <p>Tanggal : {{ $data["tanggal"] }}</p>
         <p>Waktu : {{ $data["waktu"] }}</p>
         <p>Kelas : {{ $data["kelas"] }}</p>
         <p>Mata Pelajaran : {{ $data["mapel"] }}</p>
@@ -60,7 +60,7 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item["nis"] }}</td>
             <td>{{ $item["nama"] }}</td>
-            <td>{{ $item["keterangan"] ? $item["keterangan"] : "TANPA KETERANGAN" }}</td>
+            <td>{{ $item["keterangan"] }}</td>
         </tr>
         @endforeach
     </table>
