@@ -60,7 +60,7 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item["nis"] }}</td>
             <td>{{ $item["nama"] }}</td>
-            <td>{{ $item["keterangan"] }}</td>
+            <td>{{ $item["keterangan"] ? $item["keterangan"] : "TANPA KETERANGAN" }}</td>
         </tr>
         @endforeach
     </table>
