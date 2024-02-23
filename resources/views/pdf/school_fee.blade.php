@@ -44,16 +44,19 @@
     <table id="table-data" class="table border">
         <tr>
             <th>No</th>
-            <th>Tanggal</th>
+            <th>Tanggal Pembayaran</th>
             <th>Bulan</th>
             <th>Nominal</th>
+            <th>Status</th>
         </tr>
         @foreach($data["spp"] as $item)
+
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item["tanggal"] }}</td>
             <td>{{ $item["bulan"] }}</td>
             <td>{{ $item["nominal"] }}</td>
+            <td>{{ $item["status"] }}</td>
         </tr>
         @endforeach
     </table>
