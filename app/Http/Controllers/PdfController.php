@@ -39,8 +39,9 @@ class PdfController extends Controller
         $data = [
             "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
             "data" => $requestData,
+            "jumlah_hari" => $requestData["jumlah_hari"],
         ];
-        $pdf = PDF::loadView('pdf.absence', $data)->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('pdf.absence_month', $data)->setPaper('a4', 'landscape');
         return $pdf->stream('output.pdf');
     }
 }
