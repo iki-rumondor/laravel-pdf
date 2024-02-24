@@ -9,7 +9,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         #table-data {
-            font-size: 10px
+            font-size: 12px
         }
 
         .border {
@@ -58,13 +58,19 @@
         <hr>
         SEMESTER {{ Str::upper($data['semester']) }} T.A {{ $data['tahun_ajaran'] }}
     </h2>
-    <table class="w-100">
+    <table class="w-100 mb-3">
         <tr>
-            <td>
-                <p>BULAN : {{ Str::upper($data['bulan']) }}</p>
+            <td style="width: 50%">
+                BULAN : {{ Str::upper($data['bulan']) }}
             </td>
-            <td class="text-center lh-lg">
-                <p>KELAS : {{ Str::upper($data['kelas']) }}</p>
+            <td style="text-align: right">
+                KELAS : {{ Str::upper($data['kelas']) }}
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: right">
+                MATA PELAJARAN : {{ Str::upper($data['mapel']) }}
             </td>
         </tr>
     </table>
@@ -89,18 +95,20 @@
                 <td>{{ $item['nama'] }}</td>
                 @foreach ($item['absensi'] as $abs)
                     @if ($abs['absensi'] == 'HADIR')
-                        <td>.</td>
+                        <td><strong>.</strong></td>
                     @elseif ($abs['absensi'] == 'SAKIT')
                         <td>S</td>
                     @elseif ($abs['absensi'] == 'IZIN')
                         <td>I</td>
+                    @elseif ($abs['absensi'] == 'ALPA')
+                        <td>I</td>
                     @else
-                        <td>A</td>
+                        <td></td>
                     @endif
                 @endforeach
-                <td>{{ $item["jml_s"] }}</td>
-                <td>{{ $item["jml_i"] }}</td>
-                <td>{{ $item["jml_a"] }}</td>
+                <td>{{ $item['jml_s'] }}</td>
+                <td>{{ $item['jml_i'] }}</td>
+                <td>{{ $item['jml_a'] }}</td>
             </tr>
         @endforeach
     </table>
