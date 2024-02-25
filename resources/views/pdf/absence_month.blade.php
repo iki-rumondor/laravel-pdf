@@ -92,7 +92,7 @@
         @foreach ($data['siswa'] as $item)
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $item['nama'] }}</td>
+                <td style="text-align: left">{{ $item['nama'] }}</td>
                 @foreach ($item['absensi'] as $abs)
                     @if ($abs['absensi'] == 'HADIR')
                         <td><strong>.</strong></td>
