@@ -33,7 +33,7 @@
     @include('sips.layouts')
 
     <div class="my-4 text-center bold">
-        <span>Pembagian Kelas Mahasiswa Prodi Sistem Informasi</span><br>
+        <span>Pembagian Kelas Mahasiswa</span><br>
     </div>
 
     <table id="table-data" class="table border">
@@ -42,6 +42,7 @@
             <th>NIM</th>
             <th>Nama</th>
             <th>Angkatan</th>
+            <th>Prodi</th>
             <th>Kelas</th>
         </tr>
         @foreach ($data as $item)
@@ -50,6 +51,7 @@
                 <td>{{ $item['nim'] }}</td>
                 <td>{{ $item['nama'] }}</td>
                 <td>{{ $item['angkatan'] }}</td>
+                <td>{{ $item['prodi'] }}</td>
                 <td>{{ $item['kelas'] }}</td>
             </tr>
         @endforeach

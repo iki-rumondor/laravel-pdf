@@ -7,8 +7,8 @@
             <td class="text-center">
                 <span>KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET DAN TEKNOLOGI</span><br>
                 <span>UNIVERSITAS NEGERI GORONTALO</span><br>
-                <span>FAKULTAS TEKNIK</span><br>
-                <span class="bold">PROGRAM STUDI SISTEM INFORMASI</span><br>
+                {{-- <span>FAKULTAS TEKNIK</span><br>
+                <span class="bold">PROGRAM STUDI SISTEM INFORMASI</span><br> --}}
                 <span>Jl. B.J. Habibie Desa Moutong Kec. Tilongkabila, Kab. Bone Bolango</span><br>
                 <span>Telp.(0435) 821183 Fax (0435) 821752 Laman www.ung.ac.id</span>
             </td>
