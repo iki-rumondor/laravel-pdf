@@ -41,6 +41,7 @@
             <th>No</th>
             <th>NIM</th>
             <th>Nama</th>
+            <th>Prodi</th>
             <th>Angkatan</th>
             <th>Ipk</th>
             <th>Total SKS</th>
@@ -50,6 +51,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item['nim'] }}</td>
                 <td>{{ $item['nama'] }}</td>
+                <td>{{ $item['prodi'] }}</td>
                 <td>{{ $item['angkatan'] }}</td>
                 <td>{{ $item['ipk'] }}</td>
                 <td>{{ $item['total_sks'] }}</td>
