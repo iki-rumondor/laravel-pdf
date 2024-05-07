@@ -12,11 +12,12 @@
             border: 1px solid black;
         }
 
-        #table-data tr, #table-data th, #table-data td{
+        #table-data tr,
+        #table-data th,
+        #table-data td {
             border: 1px solid black;
             padding: 10px;
         }
-
     </style>
 </head>
 
@@ -25,7 +26,8 @@
         <table class="w-100">
             <tr>
                 <td style="width: 10%">
-                    <img width="100%" id="logo" src="data:image/png;base64,{{ $headerLogo }}" alt="Nama Gambar">
+                    <img width="100%" id="logo" src="data:image/png;base64,{{ $headerLogo }}"
+                        alt="Nama Gambar">
                 </td>
                 <td class="text-center lh-lg">
                     <span><b>YAYASAN PONDOK PESANTREN</b></span><br>
@@ -38,27 +40,40 @@
         </table>
     </div>
 
-    <h2 class="mt-4 mb-3">Daftar Pembayaran SPP</h2>
-    <p>Nama : {{ $data["nama"] }}</p>
-    <p>Kelas : {{ $data["kelas"] }}</p>
+    <h2 class="mt-4 mb-3">Nota Pembayaran SPP</h2>
+    <p>Nama : {{ $data['nama'] }}</p>
+    <p>Kelas : {{ $data['kelas'] }}</p>
     <table id="table-data" class="table border">
         <tr>
-            <th>No</th>
             <th>Tanggal Pembayaran</th>
             <th>Bulan</th>
             <th>Nominal</th>
             <th>Status</th>
         </tr>
-        @foreach($data["spp"] as $item)
-
         <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $item["tanggal"] }}</td>
-            <td>{{ $item["bulan"] }}</td>
-            <td>{{ $item["nominal"] }}</td>
-            <td>{{ $item["status"] }}</td>
+            <td>{{ $data['tanggal'] }}</td>
+            <td>{{ $data['bulan'] }}</td>
+            <td>{{ $data['nominal'] }}</td>
+            <td>{{ $data['status'] }}</td>
         </tr>
-        @endforeach
+    </table>
+    <table class="mt-4 w-100">
+        <tr>
+            <td class="w-75">
+
+            </td>
+            <td class="w-25 text-center">Gorontalo, {{ $tanggal }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="text-center py-2">
+                <img width="50%" id="logo" src="data:image/png;base64,{{ $ttd }}" alt="Nama Gambar">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="text-center">Administrator</td>
+        </tr>
     </table>
 </body>
 

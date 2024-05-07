@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -30,6 +31,20 @@ class PdfController extends Controller
             "data" => $requestData,
         ];
         $pdf = PDF::loadView('pdf.school_fee', $data)->setPaper('a4', 'landscape');
+        return $pdf->stream('output.pdf');
+    }
+
+    public function note(Request $request)
+    {
+        $requestData = $request->json()->all();
+        $tanggal = Carbon::now()->isoFormat('D MMMM Y');
+        $data = [
+            "ttd" =>  base64_encode(file_get_contents(public_path('img/ttd-contoh.png'))),
+            "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
+            "tanggal" =>  $tanggal,
+            "data" => $requestData,
+        ];
+        $pdf = PDF::loadView('pdf.note', $data)->setPaper('a4', 'landscape');
         return $pdf->stream('output.pdf');
     }
 

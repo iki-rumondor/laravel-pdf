@@ -28,7 +28,7 @@
                     <img width="100%" id="logo" src="data:image/png;base64,{{ $headerLogo }}" alt="Nama Gambar">
                 </td>
                 <td class="text-center lh-lg">
-                    <span>YAYASAN PONDOK PESANTREN</span><br>
+                    <span><b>YAYASAN PONDOK PESANTREN</b></span><br>
                     <span>PROVINSI GORONTALO</span><br>
                     <span>Jl. Prof. Ing. B.J. Habibie Kec. Tilongkabila, Kode Pos 96184</span>
                 </td>
