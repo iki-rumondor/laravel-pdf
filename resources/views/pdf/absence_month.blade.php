@@ -44,8 +44,8 @@
                 </td>
                 <td class="text-center lh-lg">
                     <span><b>YAYASAN PONDOK PESANTREN</b></span><br>
-                    <span>PROVINSI GORONTALO</span><br>
-                    <span>Jl. Prof. Ing. B.J. Habibie Kec. Tilongkabila, Kode Pos 96184</span>
+                    <span><b>PROVINSI GORONTALO</b></span><br>
+                    <span><b>Jl. Prof. Ing. B.J. Habibie Kec. Tilongkabila, Kode Pos 96184</b></span>
                 </td>
                 <td style="width: 10%">
                 </td>
