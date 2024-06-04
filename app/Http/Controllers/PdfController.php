@@ -15,6 +15,7 @@ class PdfController extends Controller
         $arrayTitle = explode("_", $title);
         $data = [
             "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
+            "logoWahdah" =>  base64_encode(file_get_contents(public_path('img/logo-wahdah.png'))),
             "title" => implode(" ", $arrayTitle),
             "header" => array_keys($requestData[0]),
             "values" => $requestData,
@@ -27,6 +28,7 @@ class PdfController extends Controller
     {
         $requestData = $request->json()->all();
         $data = [
+            "logoWahdah" =>  base64_encode(file_get_contents(public_path('img/logo-wahdah.png'))),
             "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
             "data" => $requestData,
         ];
@@ -39,6 +41,7 @@ class PdfController extends Controller
         $requestData = $request->json()->all();
         $tanggal = Carbon::now()->isoFormat('D MMMM Y');
         $data = [
+            "logoWahdah" =>  base64_encode(file_get_contents(public_path('img/logo-wahdah.png'))),
             "ttd" =>  base64_encode(file_get_contents(public_path('img/ttd-contoh.png'))),
             "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
             "tanggal" =>  $tanggal,
@@ -52,6 +55,7 @@ class PdfController extends Controller
     {
         $requestData = $request->json()->all();
         $data = [
+            "logoWahdah" =>  base64_encode(file_get_contents(public_path('img/logo-wahdah.png'))),
             "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-pesantren.jpg'))),
             "data" => $requestData,
             "jumlah_hari" => $requestData["jumlah_hari"],
