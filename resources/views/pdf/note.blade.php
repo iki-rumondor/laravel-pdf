@@ -42,19 +42,23 @@
     </table>
     <table class="mt-4 w-100">
         <tr>
-            <td class="w-75">
-
+            <td class="w-75" rowspan="3">
+                <ul>
+                    <li>Biaya Makan 3x Sehari. Setiap Bulan</li>
+                    <li>Biaya Loundry Pakaian</li>
+                    <li>Biaya SPP Sekolah</li>
+                    <li>Biaya Buku Materi / Quran</li>
+                    <li>Biaya Ekstrakulikuler</li>
+                </ul>
             </td>
             <td class="w-25 text-center">Gorontalo, {{ $tanggal }}</td>
         </tr>
         <tr>
-            <td></td>
             <td class="text-center py-2">
-                <img width="50%" id="logo" src="data:image/png;base64,{{ $ttd }}" alt="Nama Gambar">
+                <img width="50%" id="logo" src="data:image/png;base64,{{ $ttd }}" alt="TTD" style="mix-blend-mode: multiply;">
             </td>
         </tr>
         <tr>
-            <td></td>
             <td class="text-center">Administrator</td>
         </tr>
     </table>

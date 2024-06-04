@@ -34,7 +34,6 @@
 </head>
 
 <body>
-
     @include('pdf.layouts')
     <h2 class="my-4 text-center">
         ABSEN KEHADIRAN SISWA
