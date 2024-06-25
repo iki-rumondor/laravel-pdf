@@ -3,6 +3,7 @@
 use App\Http\Controllers\MonevController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\SipsController;
+use App\Http\Controllers\SpeechController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,10 @@ Route::prefix("/pdf/monev")->group(function(){
 Route::prefix("/pdf/sips")->group(function(){
     Route::post('kelas', [SipsController::class, 'kelas']);
     Route::post('mahasiswa', [SipsController::class, 'mahasiswa']);
+});
+
+Route::prefix("/pdf/speech")->group(function(){
+    Route::post('class_students', [SpeechController::class, 'studentsByClass']);
 });
 
 
