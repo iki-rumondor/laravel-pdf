@@ -51,10 +51,11 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item['nim'] }}</td>
             <td>{{ $item['name'] }}</td>
-            <td>{{ $item['register_string'] }}</td>
+            <td>{{ $item['reg_time_string'] }}</td>
         </tr>
         @endforeach
     </table>
+
 </body>
 
 </html>
