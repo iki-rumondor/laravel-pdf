@@ -50,6 +50,7 @@ Route::prefix("/pdf/sips")->group(function(){
 
 Route::prefix("/pdf/speech")->group(function(){
     Route::post('class_students', [SpeechController::class, 'studentsByClass']);
+    Route::post('student_assignments', [SpeechController::class, 'studentAssignments']);
 });
 
 

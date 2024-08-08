@@ -19,4 +19,15 @@ class SpeechController extends Controller
         return $pdf->stream('output.pdf');
     }
 
+    public function studentAssignments(Request $request)
+    {
+        $requestData = $request->json()->all();
+        $data = [
+            "headerLogo" =>  base64_encode(file_get_contents(public_path('img/logo-ung.png'))),
+            "data" => $requestData,
+        ];
+        $pdf = PDF::loadView('speech.student_assignments', $data)->setPaper('a4', 'potrait');
+        return $pdf->stream('output.pdf');
+    }
+
 }
